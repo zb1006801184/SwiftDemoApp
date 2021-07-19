@@ -76,7 +76,9 @@ class ZhiHuDailViewController: BaseViewController,SDCycleScrollViewDelegate, UIT
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.navigationController?.pushViewController(ZhiHuDailyDetailController(), animated: true)
+        let vc = ZhiHuDailyDetailController();
+        vc.model = self.dataList?[indexPath.row] as? NewsModel;
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
