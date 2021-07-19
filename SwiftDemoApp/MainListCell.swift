@@ -12,7 +12,7 @@ class MainListCell: UITableViewCell {
     var title: UILabel!
     var desLabel: UILabel!
     var iconImage: UIImageView!
-    var dataList : [String]? {
+    var model : NewsModel? {
         didSet {
             self.setDataForView()
         }
@@ -60,7 +60,7 @@ class MainListCell: UITableViewCell {
     }
     
     func setDataForView() -> Void {
-        self.title.text = self.dataList?[0];
+        self.title.text = self.model?.title ?? "";
     }
     
 }
