@@ -63,7 +63,7 @@ class StringDemo: NSObject {
         person.setDictionary(["ag":13,"nam":"z"])
         name["s"] = "s"
         name["z"] = "b"
-
+            //
         print("\(person),\(name),\(name["z"] ?? "1")")
     }
 }
