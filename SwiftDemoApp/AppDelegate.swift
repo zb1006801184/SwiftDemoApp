@@ -13,9 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let root  = TabBarViewController()
-        self.window?.rootViewController=root
+        self.window?.rootViewController = root
+        StringDemo.StringDemoAction()
+        StringDemo.arryAction()
+        StringDemo.dicAction()
         return true
     }
-
+    
+   
 }
 

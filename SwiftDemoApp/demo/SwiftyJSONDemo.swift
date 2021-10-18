@@ -23,10 +23,9 @@ class SwiftyJSONDemo: UIViewController {
             } failureHandler: { (error) in
             print(error as Any)
         }
-
-
     }
 
+    
     
     
     
