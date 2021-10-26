@@ -67,3 +67,5 @@ class StringDemo: NSObject {
         print("\(person),\(name),\(name["z"] ?? "1")")
     }
 }
+
+//4
