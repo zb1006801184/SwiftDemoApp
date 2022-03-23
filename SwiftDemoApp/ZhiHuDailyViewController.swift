@@ -13,7 +13,7 @@ class ZhiHuDailViewController: BaseViewController,SDCycleScrollViewDelegate, UIT
     
     var sdcCycleScrollView:SDCycleScrollView! //轮播图
     var mainTableView:UITableView! //列表
-    var dataList:NSMutableArray? = NSMutableArray()  //数据源
+    var dataList:NSMutableArray! = NSMutableArray()  //数据源
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,21 +23,20 @@ class ZhiHuDailViewController: BaseViewController,SDCycleScrollViewDelegate, UIT
     
     func requestData() -> Void {
         
-        
         AlamofireHelper.get(url: LAEST_URL, parameters: nil) { (res) in
             let jsonData = JSON(res)
             let  top_stories = jsonData["top_stories"].arrayValue
             
             for item in top_stories {
-                self.dataList?.add(NewsModel().initJson(jsonDta: item))
+                self.dataList.add(NewsModel().initJson(jsonDta: item))
             }
             
             self.mainTableView.reloadData();
         } failureHandler: { (error) in
             print(error as Any)
         }
-
-
+        
+        
     }
     func configView() -> Void {
         view.backgroundColor = UIColor.white
@@ -66,7 +65,7 @@ class ZhiHuDailViewController: BaseViewController,SDCycleScrollViewDelegate, UIT
         var cell:MainListCell! = tableView.dequeueReusableCell(withIdentifier: "MainListCell") as? MainListCell
         
         if (cell == nil) {
-
+            
             cell = MainListCell(style: .default, reuseIdentifier: "MainListCell" )
         }
         cell.model = self.dataList?[indexPath.row] as? NewsModel;

@@ -14,9 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let root  = TabBarViewController()
         self.window?.rootViewController = root
-//        StringDemo.StringDemoAction()
-//        StringDemo.arryAction()
-//        StringDemo.dicAction()
         return true
     }
     
