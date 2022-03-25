@@ -19,23 +19,28 @@ class TabBarViewController: UITabBarController {
         createViewController()
     }
     func createViewController() {
-        let homeVC  = ViewController()
-        let homeItem : UITabBarItem = UITabBarItem (title: "首页", image: UIImage(named: "home"), selectedImage: UIImage(named: "homeco")?.withRenderingMode(.alwaysOriginal))
-        homeVC.tabBarItem = homeItem
-        homeVC.tabBarItem!.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.red], for: UIControl.State())
-        //导航栏
-        let nav = UINavigationController(rootViewController: homeVC)
-        nav.navigationBar.barTintColor = UIColor.white
-        nav.navigationBar.isTranslucent = false
-        //第二个tabbar
-        //        let v2 = TwoTabbarViewController()
-        //        let item2 = UITabBarItem (title: "2", image: UIImage(named: "home"), selectedImage: UIImage(named: "homeco")?.withRenderingMode(.alwaysOriginal))
-        //        v2.tabBarItem = item2
-        //        let nav2 = UINavigationController(rootViewController: v2)
-        
-        let tabArray = [nav]
+        var tabArray:[UINavigationController] = []
+        tabArray.append(createNav(HomeViewController(), title: "首页", image: "tabbar_home", seletImage: "tabbar_home_select.png"))
+        tabArray.append(createNav(MenuViewController(), title: "菜单", image: "tabbar_home", seletImage: "tabbar_home_select.png"))
         self.viewControllers = tabArray
     }
     
+    func createNav(_ viewController:UIViewController!,title:String!,image:String!,seletImage:String!) -> UINavigationController {
+        
+        let item : UITabBarItem = UITabBarItem (title: title, image: UIImage(named: image), selectedImage: UIImage(named: seletImage)?.withRenderingMode(.alwaysOriginal))
+        
+        viewController.tabBarItem = item
+//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.red], for:.normal);
+//        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.blue], for:.selected)
+        self.tabBar.barTintColor=UIColor.clear;
+                viewController.tabBarItem!.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.blue], for: .normal)
+                viewController.tabBarItem!.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.blue], for: .selected)
+        //导航栏
+        let nav = UINavigationController(rootViewController: viewController)
+        nav.navigationBar.barTintColor = UIColor.white
+        nav.navigationBar.isTranslucent = false
+        return nav
+        
+    }
     
 }
