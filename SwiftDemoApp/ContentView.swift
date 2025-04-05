@@ -23,16 +23,22 @@ struct ContentView: View {
             HomeView()
                 .tabItem {
                     Image(systemName: "square.grid.2x2")
-                    Text("分类")
+                    Text("菜单")
                 }
             
             //购物车
             HomeView()
                 .tabItem {
                     Image(systemName: "cart")
-                    Text("购物车")
+                    Text("订单")
                 }
             
+            //我的
+            HomeView()
+                .tabItem {
+                    Image(systemName: "person")
+                    Text("购物车")
+                }
             //我的
             HomeView()
                 .tabItem {
