@@ -9,45 +9,100 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-            
-        //tabbar
+        // TabBar主界面
         TabView {
-            //首页
+            // 首页
             HomeView()
                 .tabItem {
-                    Image(systemName: "house")
+                    Image(systemName: "house.fill")
                     Text("首页")
                 }
-            
-            //分类
-            HomeView()
+
+            // 菜单
+            MenuView()
                 .tabItem {
-                    Image(systemName: "square.grid.2x2")
+                    Image(systemName: "cup.and.saucer.fill")
                     Text("菜单")
                 }
-            
-            //购物车
-            HomeView()
+
+            // 订单
+            OrderView()
                 .tabItem {
-                    Image(systemName: "cart")
+                    Image(systemName: "doc.text.fill")
                     Text("订单")
                 }
-            
-            //我的
-            HomeView()
+
+            // 购物车
+            CartView()
                 .tabItem {
-                    Image(systemName: "person")
+                    Image(systemName: "cart.fill")
                     Text("购物车")
                 }
-            //我的
-            HomeView()
+            
+            // 我的
+            ProfileView()
                 .tabItem {
-                    Image(systemName: "person")
+                    Image(systemName: "person.fill")
                     Text("我的")
                 }
         }
-        
-    
+        .accentColor(.blue) // 设置选中状态的颜色
+    }
+}
+
+// 临时占位视图 - 菜单页面
+struct MenuView: View {
+    var body: some View {
+        NavigationView {
+            VStack {
+                Text("菜单页面")
+                    .font(.title)
+                    .foregroundColor(.gray)
+            }
+            .navigationTitle("菜单")
+        }
+    }
+}
+
+// 临时占位视图 - 订单页面
+struct OrderView: View {
+    var body: some View {
+        NavigationView {
+            VStack {
+                Text("订单页面")
+                    .font(.title)
+                    .foregroundColor(.gray)
+            }
+            .navigationTitle("订单")
+        }
+    }
+}
+
+// 临时占位视图 - 购物车页面
+struct CartView: View {
+    var body: some View {
+        NavigationView {
+            VStack {
+                Text("购物车页面")
+                    .font(.title)
+                    .foregroundColor(.gray)
+            }
+            .navigationTitle("购物车")
+        }
+    }
+}
+
+// 临时占位视图 - 我的页面
+struct ProfileView: View {
+    var body: some View {
+        NavigationView {
+            VStack {
+                Text("我的页面")
+                    .font(.title)
+                    .foregroundColor(.gray)
+            }
+            .navigationTitle("我的")
+        }
     }
 }
 
