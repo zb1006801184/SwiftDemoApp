@@ -50,20 +50,6 @@ struct ContentView: View {
     }
 }
 
-// 临时占位视图 - 菜单页面
-struct MenuView: View {
-    var body: some View {
-        NavigationView {
-            VStack {
-                Text("菜单页面")
-                    .font(.title)
-                    .foregroundColor(.gray)
-            }
-            .navigationTitle("菜单")
-        }
-    }
-}
-
 // 临时占位视图 - 订单页面
 struct OrderView: View {
     var body: some View {
