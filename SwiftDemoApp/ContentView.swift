@@ -64,20 +64,6 @@ struct OrderView: View {
     }
 }
 
-// 临时占位视图 - 我的页面
-struct ProfileView: View {
-    var body: some View {
-        NavigationView {
-            VStack {
-                Text("我的页面")
-                    .font(.title)
-                    .foregroundColor(.gray)
-            }
-            .navigationTitle("我的")
-        }
-    }
-}
-
 #Preview {
     ContentView()
 }
