@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject private var viewModel = HomeViewModel()
-    @State private var currentIndex = 0
+    @StateObject private var viewModel: HomeViewModel = HomeViewModel()
+    @State private var currentIndex: Int = 0
     private let timer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
 
     var body: some View {
@@ -141,7 +141,7 @@ struct HomeView: View {
     }
 
     // 菜单项组件
-    func menuItem(item: HomeData.MenuItem) -> some View {
+    func menuItem(item: HomeModel.MenuItem) -> some View {
         Button(action: {
             viewModel.handleMenuItemTap(item)
         }) {
